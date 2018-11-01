@@ -2,15 +2,15 @@
 
 timestamps {
 
-node () {
+node ('raptor-builder') { 
 
-	stage ('free_style_sample - Checkout') {
+	stage ('free_plus_one - Checkout') {
  	 checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '2c9d93af-6ff4-43d5-87a9-5a618aed1ce0', url: 'https://github.com/ravikiranbukka/PurdueCodes']]]) 
 	}
-	stage ('free_style_sample - Build') {
+	stage ('free_plus_one - Build') {
  			// Shell build step
 sh """ 
-echo "Hello" 
+echo "Hello_plus_one" 
  """ 
 	}
 }
